@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chumba Resort</title>
+
+  <!-- Link to Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&family=Righteous&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-gray-900 font-[Poppins]">
+
+
+  <!-- Navbar Section (Fixed) -->
+  <nav class="bg-[#364773] text-white fixed top-0 w-full z-40 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-[Righteous] text-white">Chumba Resort</a>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger Icon) -->
+        <div class="block lg:hidden">
+          <button id="navbar-toggler" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Navbar Links (Desktop Version) -->
+        <div class="hidden lg:flex space-x-4">
+          <a href="#home" class="text-lg text-white hover:text-brown-600">Home</a>
+          <a href="#restaurant" class="text-lg text-white hover:text-brown-600">Bar & Restaurant</a>
+          <a href="#accommodation" class="text-lg text-white hover:text-brown-600">Accommodation</a>
+          <a href="#conference" class="text-lg text-white hover:text-brown-600">Conference</a>
+          <a href="#contact" class="text-lg text-white hover:text-brown-600">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Custom Offcanvas Menu (Mobile Version) -->
+  <div id="offcanvas"
+    class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-opacity duration-300 ease-in-out">
+    <div id="offcanvas-menu"
+      class="bg-[#364773] text-white w-64 h-full transform -translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex justify-between items-center p-4">
+        <h5 class="text-2xl font-[Righteous]">Chumba Resort</h5>
+        <button id="close-offcanvas" class="text-white text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-4 px-4">
+        <a href="#home" class="text-lg hover:text-brown-600">Home</a>
+        <a href="#restaurant" class="text-lg hover:text-brown-600">Bar & Restaurant</a>
+        <a href="#accommodation" class="text-lg hover:text-brown-600">Accommodation</a>
+        <a href="#conference" class="text-lg hover:text-brown-600">Conference</a>
+        <a href="#contact" class="text-lg hover:text-brown-600">Contact</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- Hero Section -->
+  <section
+    class="relative bg-[#364773] text-white h-screen flex flex-col justify-center items-center p-4 text-center pt-24">
+    <!-- Dark overlay to improve text visibility with better opacity -->
+    <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+    <!-- Hero background image -->
+    <div class="absolute inset-0 bg-cover bg-center z-0 opacity-50"
+      style="background-image: url('https://media.expedia.com/media/content/shared/images/travelguides/sem-hotels-tablet.jpg?impolicy=fcrop&w=1920&h=480&q=medium');">
+    </div>
+
+    <!-- Content in Hero Section -->
+    <div class="relative z-10 text-white px-4 sm:px-6 lg:px-16">
+      <!-- Hero Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-[Righteous] mb-6 text-shadow-md">Welcome to Chumba Resort</h1>
+
+      <!-- Hero Description -->
+      <p class="text-xl sm:text-2xl mb-8 text-shadow-md max-w-3xl mx-auto">Relax, Dine, and Unwind at our premium resort
+        featuring a bar, restaurant, accommodation, and conference services. Experience luxury and comfort like never
+        before.</p>
+
+      <!-- Button Row -->
+      <div class="flex flex-col sm:flex-row justify-center gap-8 mb-10">
+        <!-- Get Directions Button with Font Awesome Icon -->
+        <a href="https://www.google.com/maps?q=0.5410444964630449,35.55153453686373" target="_blank"
+          class="bg-gradient-to-r from-[#b65c35] to-[#9b4d3e] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#9b4d3e] hover:to-[#b65c35] transition duration-300 shadow-lg hover:shadow-xl flex items-center space-x-3 transform hover:scale-105">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Get Directions</span>
+        </a>
+
+        <!-- Call Us Button with Font Awesome Icon and Phone Number -->
+        <a href="tel:+0723874428"
+          class="bg-gradient-to-r from-[#b65c35] to-[#9b4d3e] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#9b4d3e] hover:to-[#b65c35] transition duration-300 shadow-lg hover:shadow-xl flex items-center space-x-3 transform hover:scale-105">
+          <i class="fas fa-phone-alt"></i>
+          <span>Call Us: +0723 874 428</span>
+        </a>
+      </div>
+
+      <!-- Book Links -->
+      <div class="flex flex-col sm:flex-row justify-center gap-8">
+        <!-- Book Accommodation Link -->
+        <a href="#accommodation"
+          class="text-lg font-medium text-white hover:text-brown-600 hover:underline transition duration-300">
+          <i class="fas fa-bed mr-2"></i> Book Accommodation
+        </a>
+
+        <!-- Book Conference Link -->
+        <a href="#conference"
+          class="text-lg font-medium text-white hover:text-brown-600 hover:underline transition duration-300">
+          <i class="fas fa-users mr-2"></i> Book Conference
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Bar & Restaurant Section -->
+  <section id="restaurant" class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-[Righteous] text-[#364773] mb-4">Bar & Restaurant</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Experience authentic Kenyan cuisine and a wide selection of
+          drinks at our resort's exclusive bar and restaurant. From traditional dishes to refreshing cocktails, we offer
+          a variety of options to suit your taste.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-12">
+        <!-- Nyama Choma -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://th.bing.com/th/id/R.b2707ba1682e9bcaedfd5e904de8e55d?rik=H53q8UkNKW7Z4g&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f64366e4d1691a04141ba488a%2ft%2f648735c186f5a6106dd02d78%2f1686582731640%2fBBQ%2bRecipe%2b-%2bNyama%2bChoma%2bwith%2bKachumbari%2b-%2bShare.jpg%3fformat%3d1500w&ehk=LsoBVmRqfV73m%2fob0SpcYdHNqQfu3GcT5ahlI5Cv%2b4g%3d&risl=&pid=ImgRaw&r=0"
+            alt="Nyama Choma" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#364773] mb-4">Nyama Choma</h3>
+            <p class="text-lg text-gray-600 mb-4">A delicious Kenyan grilled meat dish (beef, goat, or chicken) served
+              with Ugali, Kachumbari, and Sukuma. A perfect dish for meat lovers!</p>
+            <span class="text-xl font-semibold text-[#b65c35]">KES 1,200</span>
+          </div>
+        </div>
+
+        <!-- Chicken -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="https://blog.thermoworks.com/wp-content/uploads/2016/07/bbq_chicken-27-of-39_3.jpg" alt="Chicken"
+            class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#364773] mb-4">Grilled Chicken</h3>
+            <p class="text-lg text-gray-600 mb-4">Tender, juicy grilled chicken served with your choice of sides like
+              fries, Ugali, or a fresh garden salad.</p>
+            <span class="text-xl font-semibold text-[#b65c35]">KES 950</span>
+          </div>
+        </div>
+
+        <!-- Cocktails and Fruit Juices -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/029/283/229/large_2x/a-front-view-fresh-fruit-cocktails-with-fresh-fruit-slices-ice-cooling-on-blue-drink-juice-co-free-photo.jpg"
+            alt="Cocktails and Fruit Juices" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#364773] mb-4">Cocktails & Fruit Juices</h3>
+            <p class="text-lg text-gray-600 mb-4">A variety of refreshing cocktails and fresh fruit juices to suit every
+              palate. From the famous Dawa to tropical cocktails and chilled fruit juices.</p>
+            <span class="text-xl font-semibold text-[#b65c35]">KES 600</span>
+          </div>
+        </div>
+
+        <!-- Wines and Spirits -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="https://th.bing.com/th/id/OIP.OddfcDs2g7qn5y5xaOCsrgAAAA?rs=1&pid=ImgDetMain"
+            alt="Wines and Spirits" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#364773] mb-4">Wines & Spirits</h3>
+            <p class="text-lg text-gray-600 mb-4">Enjoy a selection of fine wines and spirits from around the world,
+              including red, white, and sparkling wines, as well as your favorite local and international spirits.</p>
+            <span class="text-xl font-semibold text-[#b65c35]">KES 1,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center mt-12">
+        <a href="tel:+0723874428"
+          class="bg-gradient-to-r from-[#b65c35] to-[#9b4d3e] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#9b4d3e] hover:to-[#b65c35] transition duration-300 shadow-lg hover:shadow-xl">
+          <i class="fas fa-phone-alt mr-2"></i> Call for Reservations
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Accommodation Section -->
+  <section id="accommodation" class="bg-[#f4f4f4] py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-Righteous text-[#364773] font-[Righteous] mb-10">Accommodation</h2>
+      <p class="text-xl mb-12 text-gray-700">Discover our premium accommodation options, designed for comfort and
+        relaxation.</p>
+
+      <!-- Cards for Accommodation -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
+
+        <!-- Accommodation Card 1 (Standard Room) -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://westhighlandhotel.co.uk/wp-content/uploads/2021/03/IMG_3124-scaled.jpg" alt="Standard Room"
+            class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#364773]">Standard Room</h3>
+            <p class="mt-2 text-gray-600">A cozy room with all the basic amenities for a comfortable stay.</p>
+            <p class="mt-4 text-lg font-bold">KES 1,000 per night</p>
+            <a href="#book-now"
+              class="mt-4 inline-block bg-[#b65c35] text-white px-6 py-3 rounded-full text-lg hover:bg-[#9b4d3e] transition duration-300">Book
+              Now</a>
+          </div>
+        </div>
+
+        <!-- Accommodation Card 2 (Deluxe Room) -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://pix10.agoda.net/hotelImages/546712/-1/cb211141a42e03a0d7870da22ae9af57.jpg"
+            alt="Deluxe Room" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#364773]">Deluxe Room</h3>
+            <p class="mt-2 text-gray-600">Enjoy a larger space with a beautiful view and premium amenities.</p>
+            <p class="mt-4 text-lg font-bold">KES 4,500 per night</p>
+            <a href="#book-now"
+              class="mt-4 inline-block bg-[#b65c35] text-white px-6 py-3 rounded-full text-lg hover:bg-[#9b4d3e] transition duration-300">Book
+              Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Conference Section -->
+  <section id="conference" class="bg-[#f4f4f4] py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-Righteous text-[#364773] font-[Righteous] mb-10">Conference Facilities</h2>
+      <p class="text-xl mb-12 text-gray-700">Explore our modern conference rooms, perfect for business meetings,
+        workshops, and events.</p>
+
+      <!-- Cards for Conference -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
+
+        <!-- Conference Card 1 (Small Conference Room) -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://image-tc.galaxy.tf/wijpeg-suka6t0aqzoafpzyi1ac6bct/imgl0338.jpg?width=1600&height=1066"
+            alt="Small Conference Room" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#364773]">Small Conference Room</h3>
+            <p class="mt-2 text-gray-600">Ideal for small meetings or workshops, with all the essentials for a
+              productive session.</p>
+            <p class="mt-4 text-lg font-bold">KES 10,000 per day</p>
+            <a href="#book-now"
+              class="mt-4 inline-block bg-[#b65c35] text-white px-6 py-3 rounded-full text-lg hover:bg-[#9b4d3e] transition duration-300">Book
+              Now</a>
+          </div>
+        </div>
+
+        <!-- Conference Card 2 (Medium Conference Room) -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://www.wakenyawataliitourstravel.com/wp-content/uploads/2023/05/Conferences-1290x540.jpg"
+            alt="Medium Conference Room" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#364773]">Medium Conference Room</h3>
+            <p class="mt-2 text-gray-600">Perfect for mid-sized gatherings, fully equipped for presentations and
+              discussions.</p>
+            <p class="mt-4 text-lg font-bold">KES 15,000 per day</p>
+            <a href="#book-now"
+              class="mt-4 inline-block bg-[#b65c35] text-white px-6 py-3 rounded-full text-lg hover:bg-[#9b4d3e] transition duration-300">Book
+              Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="bg-[#f4f4f4] py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-Righteous text-[#364773] mb-10">Contact Us</h2>
+    <p class="text-xl mb-8 text-gray-700">We'd love to hear from you! Please reach out for any inquiries or booking requests.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
+
+      <!-- Contact Info -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-[#364773] mb-6">Our Contact Information</h3>
+        <p class="text-lg text-gray-700 mb-4"><i class="fas fa-phone-alt mr-2"></i> Call Us: <a href="tel:+0723874428" class="text-[#b65c35]">+0723 874 428</a></p>
+        <p class="text-lg text-gray-700 mb-4"><i class="fas fa-envelope mr-2"></i> Email: <a href="mailto:info@chumbaresort.com" class="text-[#b65c35]">info@chumbaresort.com</a></p>
+        <p class="text-lg text-gray-700 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Location: Stabex Biretwo, Nairobi, Kenya</p>
+        <p class="text-lg text-gray-700 mb-4"><i class="fas fa-clock mr-2"></i> Opening Hours: 24 Hours</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-[#364773] mb-6">Send Us a Message</h3>
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium">Full Name</label>
+            <input type="text" id="name" name="name" class="w-full p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#b65c35]" placeholder="Enter your name">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium">Email Address</label>
+            <input type="email" id="email" name="email" class="w-full p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#b65c35]" placeholder="Enter your email">
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700 font-medium">Your Message</label>
+            <textarea id="message" name="message" class="w-full p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#b65c35]" placeholder="Write your message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="bg-[#b65c35] text-white px-8 py-3 rounded-full text-lg hover:bg-[#9b4d3e] transition duration-300">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold text-[#364773] mb-6">Find Us on the Map</h3>
+      <div class="relative w-full h-80">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.820231519588!2d35.55000836001407!3d0.5410015830328788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17811f00200d5485%3A0x921de6ead9e75f29!2sCHUMBA%20RESORT%20BAR%20AND%20RESTAURANT!5e0!3m2!1ssw!2ske!4v1741434619698!5m2!1ssw!2ske"
+          width="600" height="450" style="border:0;width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- About Us Section -->
+<section id="about" class="bg-[#f4f4f4] py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-Righteous text-[#364773] mb-10">About Us</h2>
+    
+    <!-- Flex Container for Image and Content -->
+    <div class="flex flex-col sm:flex-row items-center gap-12">
+
+      <!-- Left Side Image -->
+      <div class="w-full sm:w-1/2">
+        <img src="./v9i5plev.png" alt="Chumba Resort" class="w-full h-auto rounded-lg shadow-lg">
+      </div>
+
+      <!-- Right Side Content -->
+      <div class="w-full sm:w-1/2 text-left">
+        <p class="text-lg text-gray-700">Chumba Resort, located in Biretwo, Elgeyo Marakwet County, offers a premier destination for relaxation, luxurious accommodations, fine dining, and a vibrant bar, designed to provide you with the utmost comfort and unforgettable experiences during your stay.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer Section -->
+<footer class="bg-[#364773] text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row justify-between items-center">
+      
+      <!-- Logo -->
+      <div class="mb-6 sm:mb-0">
+        <a href="#" class="text-2xl font-[Righteous] text-white">Chumba Resort</a>
+      </div>
+      
+      <!-- Social Media Links -->
+      <div class="flex space-x-6 mb-6 sm:mb-0">
+        <a href="https://facebook.com" target="_blank" class="text-white hover:text-[#b65c35]">
+          <i class="fab fa-facebook-f text-2xl"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white hover:text-[#b65c35]">
+          <i class="fab fa-instagram text-2xl"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="text-white hover:text-[#b65c35]">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="text-center sm:text-left">
+        <p class="text-sm mb-2">Call Us: <a href="tel:+0723874428" class="text-white hover:text-[#b65c35]">+0723 874 428</a></p>
+        <p class="text-sm mb-2">Email: <a href="mailto:info@chumbaresort.com" class="text-white hover:text-[#b65c35]">info@chumbaresort.com</a></p>
+        <p class="text-sm">Location: Biretwo, Elgeyo Marakwet County, Kenya</p>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="mt-8 border-t border-gray-700 pt-6 text-center">
+      <p class="text-sm text-gray-300">© 2025 Chumba Resort. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+  <!-- Include FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <!-- Custom JavaScript for Opening and Closing the Offcanvas -->
+  <script>
+    const navbarToggler = document.getElementById('navbar-toggler');
+    const offcanvas = document.getElementById('offcanvas');
+    const closeOffcanvas = document.getElementById('close-offcanvas');
+    const offcanvasMenu = document.getElementById('offcanvas-menu');
+
+    // Open the offcanvas when hamburger icon is clicked
+    navbarToggler.addEventListener('click', () => {
+      offcanvas.classList.remove('hidden');
+      offcanvas.classList.remove('opacity-0'); // Remove opacity to show the overlay
+      offcanvas.classList.add('opacity-100');  // Add opacity for smooth fading effect
+      offcanvasMenu.classList.remove('-translate-x-full'); // Slide in the offcanvas menu
+    });
+
+    // Close the offcanvas when close button is clicked
+    closeOffcanvas.addEventListener('click', () => {
+      offcanvas.classList.add('opacity-0'); // Fade out the overlay
+      offcanvasMenu.classList.add('-translate-x-full'); // Slide out the offcanvas menu
+      setTimeout(() => {
+        offcanvas.classList.add('hidden'); // Hide offcanvas when the animation ends
+      }, 300); // Match duration with transition duration (300ms)
+    });
+
+    // Close the offcanvas if the user clicks outside of the menu
+    offcanvas.addEventListener('click', (e) => {
+      if (e.target === offcanvas) {
+        offcanvas.classList.add('opacity-0'); // Fade out the overlay
+        offcanvasMenu.classList.add('-translate-x-full'); // Slide out the offcanvas menu
+        setTimeout(() => {
+          offcanvas.classList.add('hidden'); // Hide offcanvas when the animation ends
+        }, 300); // Match duration with transition duration (300ms)
+      }
+    });
+  </script>
+
+  <!-- Add the following script to toggle the mobile menu -->
+  <script>
+    const navbarToggler = document.getElementById('navbar-toggler');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navbarToggler.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>
